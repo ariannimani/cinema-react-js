@@ -1,6 +1,5 @@
 import React from "react";
 import "./Category.styles.css";
-import catData from "./catData";
 
 export default function Category(props) {
   return (

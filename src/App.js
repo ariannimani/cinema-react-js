@@ -17,6 +17,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
   const [favourites, setFavourites] = useState([]);
+  const [genres, setGenres] = useState("Unknown");
 
   const getMovieRequest = async () => {
     setIsLoading(true);
@@ -36,8 +37,17 @@ function App() {
       errorMSG(true);
       setIsLoading(false);
     }
+    const urlGen = `https://api.themoviedb.org/3/genre/movie/list?api_key=b81c20b4ad589c35fcc33ec48b338339&language=en-US`;
+    const responseGen = await fetch(urlGen);
+    const responseGenJson = await responseGen.json();
+    if (responseGenJson.genres) {
+      setGenres(responseGenJson.genres);
+      setIsLoading(false);
+    } else {
+      errorMSG(true);
+      setIsLoading(false);
+    }
   };
-
   const addFavouriteMovie = (movie) => {
     const newFavouriteList = [...favourites, movie];
     setFavourites(newFavouriteList);
@@ -103,6 +113,7 @@ function App() {
               favourites={favourites}
               removeFavouriteMovie={removeFavouriteMovie}
               searchValue={searchValue}
+              genres={genres}
             ></Home>
           }
         />
@@ -119,6 +130,7 @@ function App() {
               addFavouriteMovie={addFavouriteMovie}
               favourites={favourites}
               removeFavouriteMovie={removeFavouriteMovie}
+              genres={genres}
             ></Home>
           }
         />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Contact.styles.css";
 
 export default function Contact() {
@@ -17,6 +17,9 @@ export default function Contact() {
       setErrMessage(false);
     }
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div class="contact-body">

@@ -57,6 +57,7 @@ export default function Movies(props) {
           errorMsg={props.errorMsg}
           handleFavouritesClick={props.handleFavouritesClick}
           searchValue={props.searchValue}
+          genres={props.genres}
         ></MovieCard>
       </div>
       {/*load more button*/}

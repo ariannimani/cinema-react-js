@@ -21,7 +21,7 @@ function Banner(props) {
 
               <div className="year">
                 <ion-icon name="calendar"></ion-icon>
-                <span> {new Date().getFullYear(value.release_date)}</span>
+                <span> {value.release_date.substring(0, 4)}</span>
               </div>
             </div>
 

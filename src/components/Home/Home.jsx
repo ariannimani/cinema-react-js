@@ -3,8 +3,12 @@ import Banner from "../Banner/Banner";
 import Movies from "../Movies/Movies";
 import Category from "../Category/Category";
 import AddFavorites from "../Favorites/Favorites";
+import { useEffect } from "react";
 
 export default function Home(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <Banner selectFeatured={props.movies}></Banner>
@@ -16,6 +20,7 @@ export default function Home(props) {
         errorMsg={props.errorMsg}
         handleFavouritesClick={props.addFavouriteMovie}
         searchValue={props.searchValue}
+        genres={props.genres}
       ></Movies>
       <AddFavorites
         movies={props.favourites}

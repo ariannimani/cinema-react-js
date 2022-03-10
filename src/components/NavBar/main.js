@@ -1,4 +1,4 @@
-// variables for navbar menu toggle
+/*// variables for navbar menu toggle
 const header = document.querySelector("header");
 const nav = document.querySelector("nav");
 const navbarMenuBtn = document.querySelector(".navbar-menu-btn");
@@ -22,3 +22,4 @@ const searchBarIsActive = () => navbarForm.classList.toggle("active");
 
 navbarSearchBtn.addEventListener("click", searchBarIsActive);
 navbarFormCloseBtn.addEventListener("click", searchBarIsActive);
+*/

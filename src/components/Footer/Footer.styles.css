@@ -1,7 +1,3 @@
-/*-------------------------------------*\
-  #FOOTER SECTION
-\*-------------------------------------*/
-
 footer {
   background: var(--rich-black-fogra-30);
   padding: 80px var(--px) 40px;
@@ -86,4 +82,29 @@ ul .link-item:not(:last-child) {
 
 .wrapper a:not(:last-child) {
   margin-right: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-brand {
+    margin-right: 0;
+    margin-bottom: 60px;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .footer-copyright {
+    flex-direction: column-reverse;
+  }
+
+  .wrapper {
+    margin-bottom: 20px;
+  }
 }

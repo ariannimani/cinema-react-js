@@ -59,3 +59,27 @@
   color: var(--white);
   text-shadow: 2px 0 2px #0007;
 }
+
+@media screen and (max-width: 1200px) {
+  .banner {
+    margin-top: 100px;
+  }
+
+  .banner-card .card-title {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .banner-card .card-content {
+    bottom: 40px;
+    left: 60px;
+    right: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    display: none;
+  }
+}
