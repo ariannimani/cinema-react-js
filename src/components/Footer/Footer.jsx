@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.styles.css";
 
-export default function Footer() {
+function Footer(props) {
   return (
     <footer>
       <div className="footer-content">
@@ -33,10 +33,10 @@ export default function Footer() {
             <h4 className="link-heading">CinemaReact</h4>
 
             <li className="link-item">
-              <a href="./">About us</a>
+              <button onClick={props.homePage}>Home</button>
             </li>
             <li className="link-item">
-              <a href="./">Contacts</a>
+              <button onClick={props.contactPage}>Contacts</button>
             </li>
           </ul>
         </div>
@@ -55,3 +55,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;

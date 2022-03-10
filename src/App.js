@@ -1,11 +1,10 @@
 import "./App.css";
+import Home from "./components/Home/Home";
 import NavBar from "./components/NavBar/NavBar";
-import Banner from "./components/Banner/Banner";
-import Movies from "./components/Movies/Movies";
-import Category from "./components/Category/Category";
 import Footer from "./components/Footer/Footer";
-import AddFavorites from "./components/Favorites/Favorites";
 import { useState, useEffect } from "react";
+import { useNavigate, Route, Routes } from "react-router-dom";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -73,6 +72,15 @@ function App() {
     setIsLoading(false);
   }, [errorMsg, isLoading, otherValueAPI, page]);
 
+  const navigate = useNavigate();
+
+  const homePage = () => {
+    navigate("/");
+  };
+  const contactPage = () => {
+    navigate("/contact");
+  };
+
   return (
     <div>
       <NavBar
@@ -80,21 +88,43 @@ function App() {
         setSearchValue={setSearchValue}
         handleChange={handleChange}
       ></NavBar>
-      <Banner selectFeatured={movies}></Banner>
-      <Movies
-        movies={movies}
-        changePopularAPI={changePopularAPI}
-        loadMoreMovies={loadMoreMovies}
-        isLoading={isLoading}
-        errorMsg={errorMsg}
-        handleFavouritesClick={addFavouriteMovie}
-      ></Movies>
-      <AddFavorites
-        movies={favourites}
-        handleFavouritesClick={removeFavouriteMovie}
-      ></AddFavorites>
-      <Category></Category>
-      <Footer></Footer>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <Home
+              movies={movies}
+              changePopularAPI={changePopularAPI}
+              loadMoreMovies={loadMoreMovies}
+              isLoading={isLoading}
+              errorMsg={errorMsg}
+              addFavouriteMovie={addFavouriteMovie}
+              favourites={favourites}
+              removeFavouriteMovie={removeFavouriteMovie}
+              searchValue={searchValue}
+            ></Home>
+          }
+        />
+        <Route
+          exact
+          path="/home"
+          element={
+            <Home
+              movies={movies}
+              changePopularAPI={changePopularAPI}
+              loadMoreMovies={loadMoreMovies}
+              isLoading={isLoading}
+              errorMsg={errorMsg}
+              addFavouriteMovie={addFavouriteMovie}
+              favourites={favourites}
+              removeFavouriteMovie={removeFavouriteMovie}
+            ></Home>
+          }
+        />
+        <Route exact path="/contact" element={<Contact></Contact>} />
+      </Routes>
+      <Footer homePage={homePage} contactPage={contactPage}></Footer>
     </div>
   );
 }

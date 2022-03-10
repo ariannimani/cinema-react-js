@@ -2,13 +2,12 @@ import React from "react";
 import "./Banner.styles.css";
 
 function Banner(props) {
-  console.log(props.selectFeatured);
   return (
     <section className="banner">
       {props.selectFeatured.slice(0, 1).map((value) => (
-        <div className="banner-card">
+        <div className="banner-card" key={value.id}>
           <img
-            src={"https://image.tmdb.org/t/p/w500" + value.backdrop_path}
+            src={"https://image.tmdb.org/t/p/original" + value.backdrop_path}
             className="banner-img"
             alt=""
           />
