@@ -47,18 +47,18 @@ export default function MovieCard(props) {
                 <h3 className="card-title">{value.title}</h3>
 
                 <div className="card-info">
-                  {/* //{console.log(
-                  //  props.genres
-                  //    .filter((genrename) =>
-                  //      genrename.id
-                  //        .toString()
-                  //        .match(new RegExp(value.genres_id[0], "i"))
-                  //    )
-                  //    .map((genre, i) => (
-                  //      <span className="genre">{genre.name}</span>
-                  //    ))
-          //)}*/}
-                  <span className="genre">Action</span>
+                  {props.genres
+                    .filter((genrename) =>
+                      genrename.id
+                        .toString()
+                        .match(new RegExp(value.genre_ids[0], "i"))
+                    )
+                    .map((genres, i) => (
+                      <span className="genre" key={genres.id}>
+                        {genres.name}
+                      </span>
+                    ))}
+
                   <span className="year">
                     {value.release_date.substring(0, 4)}
                   </span>

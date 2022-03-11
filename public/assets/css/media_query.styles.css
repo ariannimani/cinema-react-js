@@ -48,16 +48,4 @@
     --section-heading: 32px;
     --fs-lg: 20px;
   }
-
-  /**
-   * FOOTER SECTION RISPONSIVE
-   */
-
-  .footer-copyright {
-    flex-direction: column-reverse;
-  }
-
-  .wrapper {
-    margin-bottom: 20px;
-  }
 }

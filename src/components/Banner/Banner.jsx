@@ -16,7 +16,15 @@ function Banner(props) {
             <div className="card-info">
               <div className="genre">
                 <ion-icon name="film"></ion-icon>
-                <span>Action</span>
+                {props.genres
+                  .filter((genrename) =>
+                    genrename.id
+                      .toString()
+                      .match(new RegExp(value.genre_ids[0], "i"))
+                  )
+                  .map((genres, i) => (
+                    <span key={genres.id}>{genres.name}</span>
+                  ))}
               </div>
 
               <div className="year">

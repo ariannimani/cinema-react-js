@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import { useState, useEffect } from "react";
 import { useNavigate, Route, Routes } from "react-router-dom";
 import Contact from "./components/Contact/Contact";
+import CategoryMovie from "./components/Category/Category";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -17,7 +18,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
   const [favourites, setFavourites] = useState([]);
-  const [genres, setGenres] = useState("Unknown");
+  const [genres, setGenres] = useState([]);
 
   const getMovieRequest = async () => {
     setIsLoading(true);
@@ -90,6 +91,9 @@ function App() {
   const contactPage = () => {
     navigate("/contact");
   };
+  const categoryPage = () => {
+    navigate("/category");
+  };
 
   return (
     <div>
@@ -114,6 +118,7 @@ function App() {
               removeFavouriteMovie={removeFavouriteMovie}
               searchValue={searchValue}
               genres={genres}
+              categoryPage={categoryPage}
             ></Home>
           }
         />
@@ -131,8 +136,14 @@ function App() {
               favourites={favourites}
               removeFavouriteMovie={removeFavouriteMovie}
               genres={genres}
+              categoryPage={categoryPage}
             ></Home>
           }
+        />
+        <Route
+          exact
+          path="/category"
+          element={<CategoryMovie></CategoryMovie>}
         />
         <Route exact path="/contact" element={<Contact></Contact>} />
       </Routes>

@@ -3,14 +3,6 @@
 \*-------------------------------------*/
 
 /**
- * copyright 2021 @codewithsadee 
- */
-
-
-
-
-
-/**
  * Remove default margin & padding
  */
 
@@ -24,19 +16,32 @@
  * more-intuitive box-sizing model.
  */
 
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 /**
  * Default font-family 
  */
 
-html { font-family: var(--ff-inter); }
+html {
+  font-family: var(--ff-inter);
+}
 
 /**
  * All heading color 
  */
 
-h1, h2, h3, h4, h5, h6 { color: var(--white); }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--white);
+}
 
 /**
  * Add default background & color,
@@ -65,7 +70,9 @@ img {
  * remove form default
  */
 
-input, button, select {
+input,
+button,
+select {
   font: inherit;
   background: none;
   border: none;
@@ -85,7 +92,9 @@ button {
  * remove list item marker 
  */
 
-li { list-style: none; }
+li {
+  list-style: none;
+}
 
 /**
  * change link default

@@ -11,7 +11,7 @@ export default function Home(props) {
   }, []);
   return (
     <div>
-      <Banner selectFeatured={props.movies}></Banner>
+      <Banner selectFeatured={props.movies} genres={props.genres}></Banner>
       <Movies
         movies={props.movies}
         changePopularAPI={props.changePopularAPI}
@@ -26,7 +26,10 @@ export default function Home(props) {
         movies={props.favourites}
         handleFavouritesClick={props.removeFavouriteMovie}
       ></AddFavorites>
-      <Category></Category>
+      <Category
+        genres={props.genres}
+        categoryPage={props.categoryPage}
+      ></Category>
     </div>
   );
 }
