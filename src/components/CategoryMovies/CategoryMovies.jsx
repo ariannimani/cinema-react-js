@@ -1,9 +1,19 @@
 import React, { useEffect } from "react";
-import "./CategoryMovie.styles.css";
+import Movies from "../Movies/Movies";
 
 export default function CategoryMovie(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  return <h1>CATEGORY</h1>;
+  console.log(props.selectedGenre);
+  return (
+    <Movies
+      movies={props.movies}
+      errorMsg={props.errorMsg}
+      handleFavouritesClick={props.handleFavouritesClick}
+      searchValue={props.searchValue}
+      genres={props.genres}
+      selectedGenre={props.selectedGenre}
+    ></Movies>
+  );
 }

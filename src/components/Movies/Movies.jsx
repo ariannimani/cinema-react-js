@@ -8,16 +8,19 @@ export default function Movies(props) {
       {/*filter bar*/}
       <div className="filter-bar">
         <div className="filter-dropdowns">
-          <select name="genre" className="genre">
-            <option value="all genres">All genres</option>
-            <option value="action">Action</option>
-            <option value="adventure">Adventure</option>
-            <option value="animal">Animal</option>
-            <option value="animation">Animation</option>
-            <option value="biography">Biography</option>
+          <select
+            name="genre"
+            className="genre"
+            onChange={props.handleDropdownChange}
+          >
+            <option value="0">All genres</option>
+            {props.genres.map((genre, i) => (
+              <option value={genre.id} key={genre.id}>
+                {genre.name}
+              </option>
+            ))}
           </select>
         </div>
-
         <div className="filter-radios">
           <input
             type="radio"
@@ -58,6 +61,7 @@ export default function Movies(props) {
           handleFavouritesClick={props.handleFavouritesClick}
           searchValue={props.searchValue}
           genres={props.genres}
+          selectedGenre={props.selectedGenre}
         ></MovieCard>
       </div>
       {/*load more button*/}

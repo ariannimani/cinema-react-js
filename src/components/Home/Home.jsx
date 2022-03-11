@@ -9,6 +9,7 @@ export default function Home(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  console.log(props.selectedGenre);
   return (
     <div>
       <Banner selectFeatured={props.movies} genres={props.genres}></Banner>
@@ -21,6 +22,8 @@ export default function Home(props) {
         handleFavouritesClick={props.addFavouriteMovie}
         searchValue={props.searchValue}
         genres={props.genres}
+        handleDropdownChange={props.handleDropdownChange}
+        selectedGenre={props.selectedGenre}
       ></Movies>
       <AddFavorites
         movies={props.favourites}
@@ -29,6 +32,7 @@ export default function Home(props) {
       <Category
         genres={props.genres}
         categoryPage={props.categoryPage}
+        handleDropdownChange={props.handleDropdownChange}
       ></Category>
     </div>
   );

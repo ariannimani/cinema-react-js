@@ -5,9 +5,14 @@ export default function Category(props) {
   return (
     <section className="category" id="category">
       <h2 className="section-heading">Category</h2>
-      <div className="category-grid" onClick={console.log(props.categoryPage)}>
+      <div className="category-grid">
         {props.genres.map((genre, i) => (
-          <div className="category-card" key={genre.id}>
+          <div
+            className="category-card"
+            value={genre.id}
+            onClick={props.categoryPage}
+            key={genre.id}
+          >
             <img
               src={require(`../../assets/images/${genre.name.toLowerCase()}.jpg`)}
               alt=""

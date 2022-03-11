@@ -5,7 +5,7 @@ import Footer from "./components/Footer/Footer";
 import { useState, useEffect } from "react";
 import { useNavigate, Route, Routes } from "react-router-dom";
 import Contact from "./components/Contact/Contact";
-import CategoryMovie from "./components/Category/Category";
+import CategoryMovie from "./components/CategoryMovies/CategoryMovies";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -19,6 +19,11 @@ function App() {
   const [errorMsg, setErrorMsg] = useState(false);
   const [favourites, setFavourites] = useState([]);
   const [genres, setGenres] = useState([]);
+  const [selectedGenre, setSelectedGenre] = useState("0");
+
+  const handleDropdownChange = (e) => {
+    setSelectedGenre(e.target.value);
+  };
 
   const getMovieRequest = async () => {
     setIsLoading(true);
@@ -91,7 +96,7 @@ function App() {
   const contactPage = () => {
     navigate("/contact");
   };
-  const categoryPage = () => {
+  const categoryPage = (e) => {
     navigate("/categorymovie");
   };
 
@@ -119,6 +124,8 @@ function App() {
               searchValue={searchValue}
               genres={genres}
               categoryPage={categoryPage}
+              handleDropdownChange={handleDropdownChange}
+              selectedGenre={selectedGenre}
             ></Home>
           }
         />
@@ -137,13 +144,31 @@ function App() {
               removeFavouriteMovie={removeFavouriteMovie}
               genres={genres}
               categoryPage={categoryPage}
+              handleDropdownChange={handleDropdownChange}
+              selectedGenre={selectedGenre}
             ></Home>
           }
         />
+
         <Route
           exact
           path="/categorymovie"
-          element={<CategoryMovie></CategoryMovie>}
+          element={
+            <CategoryMovie
+              movies={movies}
+              changePopularAPI={changePopularAPI}
+              loadMoreMovies={loadMoreMovies}
+              isLoading={isLoading}
+              errorMsg={errorMsg}
+              addFavouriteMovie={addFavouriteMovie}
+              favourites={favourites}
+              removeFavouriteMovie={removeFavouriteMovie}
+              genres={genres}
+              categoryPage={categoryPage}
+              handleDropdownChange={handleDropdownChange}
+              selectedGenre={selectedGenre}
+            ></CategoryMovie>
+          }
         />
         <Route exact path="/contact" element={<Contact></Contact>} />
       </Routes>

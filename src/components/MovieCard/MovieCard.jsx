@@ -13,7 +13,16 @@ export default function MovieCard(props) {
       ) : (
         props.movies
           .filter((name) =>
-            name.title.toLowerCase().match(new RegExp(props.searchValue, "i"))
+            props.selectedGenre === "0"
+              ? name.title
+                  .toLowerCase()
+                  .match(new RegExp(props.searchValue, "i"))
+              : name.title
+                  .toLowerCase()
+                  .match(new RegExp(props.searchValue, "i")) &&
+                name.genre_ids[0]
+                  .toString()
+                  .match(new RegExp(props.selectedGenre, "i"))
           )
           .map((value, i) => (
             <div className="movie-card" key={value.id}>
