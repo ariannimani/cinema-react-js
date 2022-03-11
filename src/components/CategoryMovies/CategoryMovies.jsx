@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import MovieCard from "../MovieCard/MovieCard";
 import "./CategoryMovie.styles.css";
 
 export default function CategoryMovie(props) {

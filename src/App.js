@@ -92,7 +92,7 @@ function App() {
     navigate("/contact");
   };
   const categoryPage = () => {
-    navigate("/category");
+    navigate("/categorymovie");
   };
 
   return (
@@ -142,7 +142,7 @@ function App() {
         />
         <Route
           exact
-          path="/category"
+          path="/categorymovie"
           element={<CategoryMovie></CategoryMovie>}
         />
         <Route exact path="/contact" element={<Contact></Contact>} />

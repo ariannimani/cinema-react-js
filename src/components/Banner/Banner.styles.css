@@ -59,7 +59,12 @@
   color: var(--white);
   text-shadow: 2px 0 2px #0007;
 }
-
+.year {
+  text-shadow: 1px 0 1px #000;
+}
+.genre {
+  text-shadow: 1px 0 1px #000;
+}
 @media screen and (max-width: 1200px) {
   .banner {
     margin-top: 100px;
