@@ -1,7 +1,7 @@
 import React from "react";
-import "./Banner.styles.css";
+import "./BannerCard.styles.css";
 
-function Banner(props) {
+function BannerCard(props) {
   return (
     <section className="banner">
       {props.selectFeatured.slice(0, 1).map((value) => (
@@ -40,4 +40,4 @@ function Banner(props) {
     </section>
   );
 }
-export default Banner;
+export default BannerCard;

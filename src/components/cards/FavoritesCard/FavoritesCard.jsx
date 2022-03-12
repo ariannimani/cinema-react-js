@@ -1,5 +1,7 @@
 import React from "react";
-import "./Favorites.styles.css";
+import "./FavoritesCard.styles.css";
+import FavoriteBtn from "../../buttons/FavoriteBtn/FavoriteBtn";
+import StarBtn from "../../buttons/StarBtn/StarBtn";
 
 export default function Favorites(props) {
   return (
@@ -16,17 +18,11 @@ export default function Favorites(props) {
               />
 
               <div className="card-overlay">
-                <div className="bookmark">
-                  <ion-icon
-                    name="bookmark-outline"
-                    onClick={() => props.handleFavouritesClick(value)}
-                  ></ion-icon>
-                </div>
-
-                <div className="rating">
-                  <ion-icon name="star-outline"></ion-icon>
-                  <span>{value.vote_average}</span>
-                </div>
+                <FavoriteBtn
+                  handleFavouritesClick={props.handleFavouritesClick}
+                  valueF={value}
+                ></FavoriteBtn>
+                <StarBtn valueAvg={value.vote_average}></StarBtn>
 
                 <div className="play">
                   <ion-icon name="play-circle-outline"></ion-icon>

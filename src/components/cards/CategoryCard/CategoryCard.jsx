@@ -1,7 +1,7 @@
 import React from "react";
-import "./Category.styles.css";
+import "./CategoryCard.styles.css";
 
-export default function Category(props) {
+export default function CategoryCard(props) {
   return (
     <section className="category" id="category">
       <h2 className="section-heading">Category</h2>
@@ -14,7 +14,7 @@ export default function Category(props) {
             key={genre.id}
           >
             <img
-              src={require(`../../assets/images/${genre.name.toLowerCase()}.jpg`)}
+              src={require(`../../../assets/images/${genre.name.toLowerCase()}.jpg`)}
               alt=""
               className="card-img"
             />

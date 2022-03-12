@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import Movies from "../Movies/Movies";
+import Movies from "../../pages/MoviesPage/MoviesPage";
+import "./Categories.styles.css";
 
-export default function CategoryMovie(props) {
+export default function Categories(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import SubmitBtn from "../../buttons/SubmitBtn/SubmitBtn";
 import "./Contact.styles.css";
 
 export default function Contact() {
@@ -81,13 +82,12 @@ export default function Contact() {
           </div>
 
           <div class="contact-form-group">
-            <button
-              type="submit"
-              id="contact-button"
-              class="load-more contact-btn"
-            >
-              Send Message
-            </button>
+            <SubmitBtn
+              btnClass="load-more contact-btn"
+              typeBtn="submit"
+              submit="Send Message"
+              submiting="Sending..."
+            ></SubmitBtn>
           </div>
         </form>
       </div>

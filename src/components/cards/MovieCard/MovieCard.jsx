@@ -1,9 +1,9 @@
 import React from "react";
 import "./MovieCard.styles.css";
+import FavoriteBtn from "../../buttons/FavoriteBtn/FavoriteBtn";
+import StarBtn from "../../buttons/StarBtn/StarBtn";
 
 export default function MovieCard(props) {
-  console.log();
-
   return (
     <div className="movie-grid">
       {props.errorMsg ? (
@@ -34,17 +34,12 @@ export default function MovieCard(props) {
                 />
 
                 <div className="card-overlay">
-                  <div className="bookmark">
-                    <ion-icon
-                      name="bookmark-outline"
-                      onClick={() => props.handleFavouritesClick(value)}
-                    ></ion-icon>
-                  </div>
+                  <FavoriteBtn
+                    handleFavouritesClick={props.handleFavouritesClick}
+                    valueF={value}
+                  ></FavoriteBtn>
 
-                  <div className="rating">
-                    <ion-icon name="star-outline"></ion-icon>
-                    <span>{value.vote_average}</span>
-                  </div>
+                  <StarBtn valueAvg={value.vote_average}></StarBtn>
 
                   <div className="play">
                     <ion-icon name="play-circle-outline"></ion-icon>

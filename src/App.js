@@ -1,11 +1,11 @@
 import "./App.css";
-import Home from "./components/Home/Home";
-import NavBar from "./components/NavBar/NavBar";
-import Footer from "./components/Footer/Footer";
+import Home from "./components/pages/HomePage/HomePage";
+import NavBar from "./components/Main/NavBar/NavBar";
+import Footer from "./components/Main/Footer/Footer";
 import { useState, useEffect } from "react";
 import { useNavigate, Route, Routes } from "react-router-dom";
-import Contact from "./components/Contact/Contact";
-import CategoryMovie from "./components/CategoryMovies/CategoryMovies";
+import Contact from "./components/pages/Contact/Contact";
+import Categories from "./components/pages/Categories/Categories";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -154,7 +154,7 @@ function App() {
           exact
           path="/categorymovie"
           element={
-            <CategoryMovie
+            <Categories
               movies={movies}
               changePopularAPI={changePopularAPI}
               loadMoreMovies={loadMoreMovies}
@@ -167,7 +167,7 @@ function App() {
               categoryPage={categoryPage}
               handleDropdownChange={handleDropdownChange}
               selectedGenre={selectedGenre}
-            ></CategoryMovie>
+            ></Categories>
           }
         />
         <Route exact path="/contact" element={<Contact></Contact>} />
