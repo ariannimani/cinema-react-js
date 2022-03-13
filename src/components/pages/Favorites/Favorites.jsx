@@ -1,5 +1,5 @@
 import React from "react";
-import "./FavoritesCard.styles.css";
+import "./Favorites.styles.css";
 import FavoriteBtn from "../../buttons/FavoriteBtn/FavoriteBtn";
 import StarBtn from "../../buttons/StarBtn/StarBtn";
 

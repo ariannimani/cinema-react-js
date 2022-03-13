@@ -2,7 +2,7 @@ import React from "react";
 import Banner from "../../cards/BannerCard/BannerCard";
 import Movies from "../../pages/MoviesPage/MoviesPage";
 import Category from "../../cards/CategoryCard/CategoryCard";
-import AddFavorites from "../../cards/FavoritesCard/FavoritesCard";
+import AddFavorites from "../Favorites/Favorites";
 import FilterBar from "../../Main/FilterBar/FilterBar";
 import { useEffect } from "react";
 
