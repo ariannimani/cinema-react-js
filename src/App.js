@@ -84,9 +84,10 @@ function App() {
   };
 
   useEffect(() => {
-    getMovieRequest(otherValueAPI, page, isLoading, errorMsg);
+    getMovieRequest();
     setIsLoading(false);
-  }, [errorMsg, isLoading, otherValueAPI, page, getMovieRequest]);
+    //eslint-disable-next-line
+  }, []);
 
   const navigate = useNavigate();
 
