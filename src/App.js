@@ -86,7 +86,7 @@ function App() {
   useEffect(() => {
     getMovieRequest(otherValueAPI, page, isLoading, errorMsg);
     setIsLoading(false);
-  }, [errorMsg, isLoading, otherValueAPI, page]);
+  }, [errorMsg, isLoading, otherValueAPI, page, getMovieRequest]);
 
   const navigate = useNavigate();
 
